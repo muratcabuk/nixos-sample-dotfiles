@@ -37,7 +37,7 @@
   in {
 
     # bu sistemin adı muratpc olarak değiştirildi
-    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.muratpc = nixpkgs.lib.nixosSystem {
       
       # systm bilgisi yukarıda tanımlana system değişkeniniden alındı
       system = system;
