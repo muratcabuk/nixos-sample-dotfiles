@@ -1,0 +1,1 @@
+Burada da doğrudan bir script package olarak yayınlanıyor. Ancak bu sefer scriptin bağımlılığı olan paketler script ile aynı dizinde tutuluyor.

@@ -1,0 +1,1 @@
+Bir script doyası üzerinden paket yayınlama

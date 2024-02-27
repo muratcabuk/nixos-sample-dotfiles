@@ -1,0 +1,1 @@
+Nix paket reposundaki hello uygulaması overrride edilerek yayınlanıyor.

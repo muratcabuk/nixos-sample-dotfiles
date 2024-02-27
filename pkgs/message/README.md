@@ -1,0 +1,1 @@
+Bir git reposındaki C ile yazılmış uygulama paket olarak yaınlanıyor

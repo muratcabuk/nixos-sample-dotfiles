@@ -1,0 +1,1 @@
+Github daki  C ileyazılmış bir uygulamanın build işlemleri farklı bir nix dosyasından build alınarak yayına veriliyor.

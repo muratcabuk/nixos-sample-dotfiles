@@ -1,0 +1,1 @@
+Doğrudan bir script'in paket olarak yayınlanması
