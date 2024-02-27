@@ -9,6 +9,6 @@ final: prev: {
     };
   });
 
-  hello = pkgs.hello;
+  hello-new = final.hello;
 
 }

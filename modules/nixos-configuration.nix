@@ -3,7 +3,7 @@
 {
   imports =
     [ # Include the results of the hardware scan.
-      ../hoats/lenovo-l15/hardware.nix
+      ../hosts/lenovo-l15/hardware-configuration.nix
     ];
 
  nix.settings.experimental-features = [ "nix-command" "flakes" ];
