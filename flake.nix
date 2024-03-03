@@ -54,7 +54,7 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.jdoe = import ./modules/murat-home-manager.nix;
+            home-manager.users.muratcabuk = import ./modules/murat-home-manager.nix;
           }
       ];
     };
