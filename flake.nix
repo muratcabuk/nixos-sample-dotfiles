@@ -41,6 +41,7 @@
 
   in {
 
+
     # bu sistemin adı muratpc olarak değiştirildi
     nixosConfigurations.muratpc = nixpkgs.lib.nixosSystem {
       
