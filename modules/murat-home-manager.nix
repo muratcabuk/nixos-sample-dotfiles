@@ -31,6 +31,9 @@
   # daha önce flake.nix dosyası için söylediklerimiz burası için de geçerli
   home.stateVersion = "23.11";
 
+  home.sessionVariables.EDITOR = "vim";
+
+
   # Homemanager ın kendini kurmasını ve ayarlamasını söylüyoruz.
   programs.home-manager.enable = true;
 }

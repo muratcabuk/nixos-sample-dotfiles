@@ -58,7 +58,7 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.users.muratcabuk = import ./modules/murat-home-manager.nix;
-            home.stateVersion = "23.11";
+    
           }
       ];
     };
