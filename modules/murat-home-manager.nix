@@ -5,6 +5,23 @@
   home.username = "muratcabuk";
   home.homeDirectory = "/home/muratcabuk";
 
+  
+
+  # Language ayaraları
+  home.language = {
+    base = "en_US.utf8";
+    ctype = "en_US.utf8";
+    numeric = "tr_TR.utf8";
+    time = "tr_TR.utf8";
+    collate = "tr_TR.utf8";
+    monetary = "tr_TR.utf8";
+    messages = "en_US.utf8";
+    paper = "tr_TR.utf8";
+    name = "tr_TR.utf8";
+    address = "tr_TR.utf8";
+    telephone = "tr_TR.utf8";
+    measurement = "tr_TR.utf8";
+};
 
 
   # bu değeri de ilk kuruulumdaki gibi bırakıyoruz. 
