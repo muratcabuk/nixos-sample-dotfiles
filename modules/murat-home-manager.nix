@@ -6,7 +6,10 @@
   home.homeDirectory = "/home/muratcabuk";
 
   
+  home.sessionVariables = {
+      LANG = "en_US.UTF-8";
 
+    };
   # Language ayaraları
   home.language = {
     base = "en_US.utf8";
