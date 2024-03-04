@@ -22,7 +22,7 @@
     overlays = [
                 (import ./overlays/custom.nix) 
                 (import ./overlays/hello.nix)
-               ] ;
+            ] ;
     # ne tür bir sistemde çalışıyorsak onun için nixpkgs koleksiyonu ve kütüphanesi oluşturuluyor.
     pkgs = import nixpkgs {
               inherit system;
@@ -58,6 +58,7 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.users.muratcabuk = import ./modules/murat-home-manager.nix;
+            home.stateVersion = "23.11";
           }
       ];
     };

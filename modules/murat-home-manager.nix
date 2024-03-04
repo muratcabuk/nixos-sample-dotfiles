@@ -17,7 +17,7 @@
     numeric = "tr_TR.utf8";
     time = "tr_TR.utf8";
     collate = "tr_TR.utf8";
-    monetary = "tr_TR.utf8";
+    monetary = "tr_TR.utf8"; #para
     messages = "en_US.utf8";
     paper = "tr_TR.utf8";
     name = "tr_TR.utf8";
