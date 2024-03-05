@@ -20,6 +20,9 @@
     zsh
     oh-my-zsh
     zsh-powerlevel10k
+    zsh-completions
+    zsh-syntax-highlighting
+    zsh-history-substring-search
 
     powershell
   ];
@@ -46,7 +49,7 @@
                                   };
                       shellAliases = {
                                         ll = "ls -l";
-                                        nixupdate = "sudo nixos-rebuild switch--flake .#muratpc --impure";
+                                        nixupdate = "sudo nixos-rebuild switch --flake .#muratpc --impure";
                                       };
                       
                     };

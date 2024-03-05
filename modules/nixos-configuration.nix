@@ -37,6 +37,11 @@
     LC_TIME = "tr_TR.UTF-8";
   };
 
+
+
+
+  
+
   # Grafik servisini enable ediyoruz
   # klavye ayarı yapılıyor
   services.xserver = {
@@ -48,6 +53,10 @@
     xkbVariant = "";
   };
 
+  # Enable the OpenSSH daemon.
+  services.openssh.enable = true;
+
+
   # Configure console keymap
   console.keyMap = "trq";
 
@@ -57,6 +66,8 @@
     description = "murat cabuk";
     extraGroups = [ "networkmanager" "wheel" "docker"];
     packages = with pkgs; [];
+    # kullanıcı default shell i zsh olarka ayarlanıyor
+    shell = pkgs.zsh;
   };
 
   # https://nixos.wiki/wiki/Command_Shell
@@ -76,8 +87,11 @@
     home-manager
   ];
 
-    # Enable the OpenSSH daemon.
-    services.openssh.enable = true;
+
+    programs = {
+      zsh.enable = true;
+      };
+
 
     networking.firewall.enable = false;
 
