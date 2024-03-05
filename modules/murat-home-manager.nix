@@ -32,9 +32,9 @@
     programs.home-manager.enable = true;
     programs.chromium = { 
                           enable = true;
-                          programs.chromium.extensions = ["aapbdbdomjkkjkaonfhkkikfgjllcleb"];
+                          extensions = ["aapbdbdomjkkjkaonfhkkikfgjllcleb"];
                         };
-                        
+
     programs.zsh.enable = true;
     programs.vscode.enable = true;
 
