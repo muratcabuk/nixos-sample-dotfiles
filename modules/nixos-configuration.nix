@@ -87,7 +87,6 @@
     wget
     curl
     git
-    kwrite
     kate
     home-manager
   ];
