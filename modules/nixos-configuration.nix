@@ -64,6 +64,7 @@
     wget
     curl
     git
+    home-manager
   ];
 
    # Enable the OpenSSH daemon.

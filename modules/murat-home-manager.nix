@@ -33,4 +33,6 @@
 
   # Homemanager ın kendini kurmasını ve ayarlamasını söylüyoruz.
   programs.home-manager.enable = true;
+
+  
 }
