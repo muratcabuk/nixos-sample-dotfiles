@@ -23,7 +23,7 @@
   #   address = "tr_TR.utf8";
   #   telephone = "tr_TR.utf8";
   #   measurement = "tr_TR.utf8";
-};
+#};
 
 
   # bu değeri de ilk kuruulumdaki gibi bırakıyoruz. 
@@ -34,5 +34,5 @@
   # Homemanager ın kendini kurmasını ve ayarlamasını söylüyoruz.
   programs.home-manager.enable = true;
 
-  
+
 }
