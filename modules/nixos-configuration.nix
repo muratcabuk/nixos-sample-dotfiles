@@ -6,7 +6,7 @@
       ../hosts/lenovo-l15/hardware-configuration.nix
     ];
 
- nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Bootloader.
   boot.loader.grub.enable = true;
@@ -37,8 +37,13 @@
     LC_TIME = "tr_TR.UTF-8";
   };
 
-  # Configure keymap in X11
+  # Grafik servisini enable ediyoruz
+  # klavye ayarı yapılıyor
   services.xserver = {
+    enable = true;
+    xserver.displayManager.sddm.enable = true;
+    desktopManager.plasma5.enable = true;
+    
     layout = "tr";
     xkbVariant = "";
   };
@@ -61,18 +66,18 @@
 
 
   environment.systemPackages = with pkgs; [
-    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    nano
     wget
     curl
     git
     home-manager
   ];
 
-   # Enable the OpenSSH daemon.
-   services.openssh.enable = true;
+    # Enable the OpenSSH daemon.
+    services.openssh.enable = true;
 
-   networking.firewall.enable = false;
+    networking.firewall.enable = false;
 
-  system.stateVersion = "23.11"; # Did you read the comment?
+    system.stateVersion = "23.11"; # Did you read the comment?
 
 }
