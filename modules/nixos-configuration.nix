@@ -23,6 +23,7 @@
 
   # Select internationalisation properties.
   i18n.defaultLocale = "tr_TR.UTF-8";
+  i18n.supportedLocales = ["all"];
 
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "tr_TR.UTF-8";

@@ -8,22 +8,22 @@
   
 
   # https://www.reddit.com/r/NixOS/comments/12v2flc/struggling_with_very_basic_homemanager_config/
-  home.sessionVariables = { LANG = "en_US.UTF-8"; };
+  #home.sessionVariables = { LANG = "en_US.UTF-8"; };
   # Language ayaraları
-  # home.language = {
-  #   base = "en_US.utf8";
-  #   ctype = "en_US.utf8";
-  #   numeric = "tr_TR.utf8";
-  #   time = "tr_TR.utf8";
-  #   collate = "tr_TR.utf8";
-  #   monetary = "tr_TR.utf8"; #para
-  #   messages = "en_US.utf8";
-  #   paper = "tr_TR.utf8";
-  #   name = "tr_TR.utf8";
-  #   address = "tr_TR.utf8";
-  #   telephone = "tr_TR.utf8";
-  #   measurement = "tr_TR.utf8";
-#};
+   home.language = {
+     base = "en_US.utf8";
+     ctype = "en_US.utf8";
+     numeric = "tr_TR.utf8";
+     time = "tr_TR.utf8";
+     collate = "tr_TR.utf8";
+     monetary = "tr_TR.utf8"; #para
+     messages = "en_US.utf8";
+     paper = "tr_TR.utf8";
+     name = "tr_TR.utf8";
+     address = "tr_TR.utf8";
+     telephone = "tr_TR.utf8";
+     measurement = "tr_TR.utf8";
+};
 
 
   # bu değeri de ilk kuruulumdaki gibi bırakıyoruz. 

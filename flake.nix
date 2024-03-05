@@ -58,7 +58,10 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.users.muratcabuk = import ./modules/murat-home-manager.nix;
-    
+            
+            # Optionally, use home-manager.extraSpecialArgs to pass
+            # arguments to home.nix
+
           }
       ];
     };
