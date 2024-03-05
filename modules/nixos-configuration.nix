@@ -46,7 +46,10 @@
   # klavye ayarı yapılıyor
   services.xserver = {
     enable = true;
-    displayManager.sddm.enable = true;
+    displayManager.sddm = {
+                              enable = true;
+                              autoNumlock = true;
+                          };       
     desktopManager.plasma5.enable = true;
 
     layout = "tr";
@@ -84,6 +87,8 @@
     wget
     curl
     git
+    kwrite
+    kate
     home-manager
   ];
 

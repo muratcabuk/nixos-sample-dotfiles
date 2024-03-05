@@ -41,10 +41,18 @@
                       enableAutosuggestions = true;
                       syntaxHighlighting.enable = true;
                       dotDir = ".config/zsh";
+                      plugins = [
+                                  {
+                                    name = "powerlevel10k";
+                                    src = pkgs.zsh-powerlevel10k;
+                                    file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
+                                  }
+                                ];
                       oh-my-zsh = {
                                     enable = true;
+                                    package = pkgs.oh-my-zsh;
                                     plugins = [ "git" "sudo" "zsh-syntax-highlighting"];
-                                    theme = "powerlevel10k/powerlevel10k";
+                                    theme = "powerlevel10k";
                                 
                                   };
                       shellAliases = {
