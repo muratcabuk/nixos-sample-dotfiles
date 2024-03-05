@@ -89,8 +89,20 @@
     git
     kate
     home-manager
+    font-awesome
   ];
 
+
+  # https://nixos.wiki/wiki/Fonts
+  fonts.packages = with pkgs; [
+                                  noto-fonts
+                                  noto-fonts-cjk
+                                  noto-fonts-emoji
+                                  font-awesome
+                                  powerline-fonts
+                                  powerline-symbols
+                                  (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })
+                              ];
 
     programs = {
       zsh.enable = true;
