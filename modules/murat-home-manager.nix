@@ -43,7 +43,7 @@
       enable = true;
       indicator = true;
     };
-  }
+  };
 
   # bu değeri de ilk kuruulumdaki gibi bırakıyoruz. 
   # daha önce flake.nix dosyası için söylediklerimiz burası için de geçerli
