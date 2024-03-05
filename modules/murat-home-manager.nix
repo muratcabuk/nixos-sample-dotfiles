@@ -28,10 +28,11 @@
     plasma5.kdecoration
   ];
   
-  # Dosya ve klasörlerin konfigürasyonu
-  home.file = {
-     ".config/zsh".source = ".config/zsh";
-  };
+  # zsh dosya konfigürasyonu
+  # home.file.".config/zsh" = {
+  #    source = ".config/zsh";
+  #    recursive = true;
+  # };
 
   # Uygulamaların Konfigürasyonu
     programs.home-manager.enable = true;
@@ -46,6 +47,7 @@
                       enableCompletion = true;
                       enableAutosuggestions = true;
                       syntaxHighlighting.enable = true;
+                      dotDir = ".config/zsh";
                       oh-my-zsh = {
                                     enable = true;
                                     plugins = [ "git" "zsh-autosuggestions" ];
