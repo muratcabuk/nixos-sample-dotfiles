@@ -53,7 +53,7 @@
                                     enable = true;
                                     package = pkgs.oh-my-zsh;
                                     plugins = [ "git" "sudo" "zsh-syntax-highlighting"];
-                                    theme = "powerlevel10k";
+                                    theme = "powerlevel10k/powerlevel10k";
                                 
                                   };
                       shellAliases = {
