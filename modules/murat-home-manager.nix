@@ -15,7 +15,12 @@
   # Kurulması gereken pakatler
   home.packages = with pkgs; [
     vim
+    
+    # zsh
     zsh
+    zsh-autosuggestions
+    oh-my-zsh
+
     powershell
 
     # KDE Plasma
@@ -25,7 +30,7 @@
   
   # Dosya ve klasörlerin konfigürasyonu
   home.file = {
-     ".config/zsh".source = ./config/zsh;
+     ".config/zsh".source = ".config/zsh";
   };
 
   # Uygulamaların Konfigürasyonu
@@ -43,7 +48,7 @@
                       syntaxHighlighting.enable = true;
                       oh-my-zsh = {
                                     enable = true;
-                                    plugins = [ "git" "thefuck" ];
+                                    plugins = [ "git" "zsh-autosuggestions" ];
                                     theme = "robbyrussell";
                                   };
                       shellAliases = {

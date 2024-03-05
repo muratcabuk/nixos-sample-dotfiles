@@ -55,7 +55,7 @@
   users.users.muratcabuk = {
     isNormalUser = true;
     description = "murat cabuk";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "docker"];
     packages = with pkgs; [];
   };
 
@@ -74,6 +74,7 @@
     curl
     git
     home-manager
+    history
   ];
 
     # Enable the OpenSSH daemon.
