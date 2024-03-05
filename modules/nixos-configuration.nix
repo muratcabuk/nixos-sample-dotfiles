@@ -59,6 +59,9 @@
     packages = with pkgs; [];
   };
 
+  # https://nixos.wiki/wiki/Command_Shell
+  users.defaultUserShell = pkgs.bash;
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
   virtualisation.virtualbox.guest.enable = true;

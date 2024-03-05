@@ -35,8 +35,27 @@
                           extensions = ["aapbdbdomjkkjkaonfhkkikfgjllcleb"];
                         };
 
-    programs.zsh.enable = true;
-    programs.vscode.enable = true;
+    programs.zsh = {
+                      history.size = 10000;
+                      enable = true;
+                      enableCompletion = true;
+                      enableAutosuggestions = true;
+                      syntaxHighlighting.enable = true;
+                      oh-my-zsh = {
+                                    enable = true;
+                                    plugins = [ "git" "thefuck" ];
+                                    theme = "robbyrussell";
+                                  };
+                      shellAliases = {
+                                        ll = "ls -l";
+                                        nixupdate = "sudo nixos-rebuild switch--flake .#muratpc --impure";
+                                      };
+                      
+                    };
+
+    programs.vscode = {
+                        enable = true;
+                      };
 
 
   # Servislerin Konfigürasyonu
