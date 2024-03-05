@@ -74,7 +74,6 @@
     curl
     git
     home-manager
-    history
   ];
 
     # Enable the OpenSSH daemon.
