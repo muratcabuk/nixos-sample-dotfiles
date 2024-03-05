@@ -29,21 +29,24 @@
   };
 
   # Uygulamaların Konfigürasyonu
-  programs = with programs; {
-    home-manager.enable = true;
-    chromium.enable = true;
-    chromium.extensions = ["aapbdbdomjkkjkaonfhkkikfgjllcleb"];
-    zsh.enable = true;
-    vscode.enable = true;
-  };
+    programs.home-manager.enable = true;
+    programs.chromium = { 
+                          enable = true;
+                          programs.chromium.extensions = ["aapbdbdomjkkjkaonfhkkikfgjllcleb"];
+                        };
+                        
+    programs.zsh.enable = true;
+    programs.vscode.enable = true;
+
 
   # Servislerin Konfigürasyonu
-  services = {
-    kdeconnect = {
+  services.kdeconnect = {
       enable = true;
       indicator = true;
     };
-  };
+
+
+
 
   # bu değeri de ilk kuruulumdaki gibi bırakıyoruz. 
   # daha önce flake.nix dosyası için söylediklerimiz burası için de geçerli
