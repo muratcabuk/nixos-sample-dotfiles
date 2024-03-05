@@ -15,10 +15,12 @@
   outputs = { self, nixpkgs,home-manager, ... }@inputs: 
   let
 
-    # üzerinde çalıştığımız sistemin Nix'deki kod addı.
+    # üzerinde çalıştığımız sistemin Nix'deki kod adı.
     system = "x86_64-linux";
 
     # 2 adet overlay var
+    # overlay ile paketlerimizi nixpkgs'i overrride eerek yükleyebiliyıruz
+    # ayrıca pketlerimiin özellikleri ioverrride edebiliyoruz
     overlays = [
                 (import ./overlays/custom.nix) 
                 (import ./overlays/hello.nix)

@@ -18,17 +18,11 @@
     
     # zsh
     zsh
-    zsh-autosuggestions
     oh-my-zsh
+    zsh-powerlevel10k
 
     powershell
   ];
-  
-  # zsh dosya konfigürasyonu
-  # home.file.".config/zsh" = {
-  #    source = ".config/zsh";
-  #    recursive = true;
-  # };
 
   # Uygulamaların Konfigürasyonu
     programs.home-manager.enable = true;
@@ -46,8 +40,9 @@
                       dotDir = ".config/zsh";
                       oh-my-zsh = {
                                     enable = true;
-                                    plugins = [ "git" "zsh-autosuggestions" ];
-                                    theme = "robbyrussell";
+                                    plugins = [ "git" "sudo" "zsh-syntax-highlighting"];
+                                    theme = "powerlevel10k/powerlevel10k";
+                                
                                   };
                       shellAliases = {
                                         ll = "ls -l";
