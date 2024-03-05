@@ -9,7 +9,7 @@
 
 
   # Language ayaraları : https://nix-community.github.io/home-manager/options.xhtml#opt-home.language
-   home.language.base = en_US.UTF-8;
+   home.language.base = "en_US.UTF-8";
 
 
   # bu değeri de ilk kuruulumdaki gibi bırakıyoruz. 
