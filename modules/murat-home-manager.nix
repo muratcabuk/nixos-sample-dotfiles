@@ -30,9 +30,9 @@
 
   # Uygulamaların Konfigürasyonu
   programs = with programs; {
-    home-manager.enable = true
+    home-manager.enable = true;
     chromium.enable = true;
-    chromium.extensions = ["aapbdbdomjkkjkaonfhkkikfgjllcleb"]
+    chromium.extensions = ["aapbdbdomjkkjkaonfhkkikfgjllcleb"];
     zsh.enable = true;
     vscode.enable = true;
   };
