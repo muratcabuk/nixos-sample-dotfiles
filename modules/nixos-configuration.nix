@@ -41,9 +41,9 @@
   # klavye ayarı yapılıyor
   services.xserver = {
     enable = true;
-    xserver.displayManager.sddm.enable = true;
+    displayManager.sddm.enable = true;
     desktopManager.plasma5.enable = true;
-    
+
     layout = "tr";
     xkbVariant = "";
   };
