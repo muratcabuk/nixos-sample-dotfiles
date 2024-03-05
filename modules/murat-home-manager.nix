@@ -22,10 +22,6 @@
     oh-my-zsh
 
     powershell
-
-    # KDE Plasma
-    plasma5.kdeplasma-addons
-    plasma5.kdecoration
   ];
   
   # zsh dosya konfigürasyonu
