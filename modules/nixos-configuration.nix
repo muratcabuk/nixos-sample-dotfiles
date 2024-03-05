@@ -40,7 +40,8 @@
 
 
 
-  
+  # Prevent the new user dialog in zsh
+system.userActivationScripts.zshrc = "touch .zshrc";
 
   # Grafik servisini enable ediyoruz
   # klavye ayarı yapılıyor
