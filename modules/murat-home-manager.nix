@@ -43,6 +43,7 @@
                       '';
 
                       history.size = 10000;
+                      historySubstringSearch.enable = true;
                       enable = true;
                       enableCompletion = true;
                       enableAutosuggestions = true;
@@ -74,8 +75,8 @@
                       oh-my-zsh = {
                                     enable = true;
                                     package = pkgs.oh-my-zsh;
-                                    plugins = [ "git" "sudo" "zsh-syntax-highlighting"];
-                                    theme = "powerlevel10k/powerlevel10k";
+                                    plugins = [ "git" "sudo"];
+                                    
                                 
                                   };
                       shellAliases = {
