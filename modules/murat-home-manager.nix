@@ -35,11 +35,7 @@
                         };
 
     programs.zsh = {
-                       initExtraBeforeCompInit = ''
-                          # p10k instant prompt
-                          P10K_INSTANT_PROMPT="$XDG_CACHE_HOME/p10k-instant-prompt-''${(%):-%n}.zsh"
-                          [[ ! -r "$P10K_INSTANT_PROMPT" ]] || source "$P10K_INSTANT_PROMPT"
-                      '';
+
 
                       history.size = 10000;
                       enable = true;
@@ -55,9 +51,9 @@
                                   }
 
                                   {
-                                      name = "powerlevel10k-config";
-                                      src = pkgs.zsh-powerlevel10k;
-                                      file = "share/zsh-powerlevel10k/internal/p10k.zsh";
+                                    name = "powerlevel10k-config";
+                                    src = ./config/.p10k.zsh;
+                                    file = ".p10k.zsh";
                                   }
 
                                 ];
