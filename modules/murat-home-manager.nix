@@ -37,7 +37,7 @@
     programs.zsh = {
 
                       initExtra = ''
-                                    [[ ! -f ${./p10k.zsh;} ]] || source ${./p10k.zsh}
+                                    [[ ! -f ${./p10k.zsh} ]] || source ${./p10k.zsh}
                                   '';
 
                       history.size = 10000;
