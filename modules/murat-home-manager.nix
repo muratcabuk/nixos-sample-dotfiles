@@ -52,7 +52,7 @@
 
                                   {
                                     name = "powerlevel10k-config";
-                                    src = ./config;
+                                    src = ../config;
                                     file = ".p10k.zsh";
                                   }
 
