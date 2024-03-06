@@ -52,6 +52,7 @@
 
                                   {
                                       name = "powerlevel10k-config";
+                                      srch = pkgs.zsh-powerlevel10k;
                                       file = "share/zsh-powerlevel10k/internal/p10k.zsh";
                                   }
 
