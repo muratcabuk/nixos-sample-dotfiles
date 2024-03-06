@@ -36,9 +36,6 @@
 
     programs.zsh = {
 
-                      initExtra = ''
-                                    [[ ! -f ${./p10k.zsh} ]] || source ${./p10k.zsh}
-                                  '';
 
                       history.size = 10000;
                       enable = true;
@@ -51,6 +48,12 @@
                                     name = "powerlevel10k";
                                     src = pkgs.zsh-powerlevel10k;
                                     file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
+                                  }
+
+                                  {
+                                      name = "powerlevel10k-config";
+                                      src = ./p10k-config;
+                                      file = "p10k.zsh";
                                   }
 
                                 ];
