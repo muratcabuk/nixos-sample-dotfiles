@@ -109,6 +109,7 @@ system.userActivationScripts.zshrc = "touch .zshrc";
 
   # https://nixos.wiki/wiki/Fonts
   fonts.packages = with pkgs; [
+                                  meslo-lgs-nf
                                   noto-fonts
                                   noto-fonts-cjk
                                   noto-fonts-emoji
