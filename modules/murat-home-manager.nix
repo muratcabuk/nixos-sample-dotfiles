@@ -51,13 +51,13 @@
                                   {
                                     name = "powerlevel10k";
                                     src = pkgs.zsh-powerlevel10k;
-                                    file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
+                                    file = "${zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
                                   }
 
                                   {
-                                      file = "p10k.zsh";
                                       name = "powerlevel10k-config";
-                                      src = ../../config/zsh/p10k;
+                                      src = pkgs.zsh-powerlevel10k;
+                                      file = "share/zsh-powerlevel10k/internal/p10k.zsh";
                                   }
 
                                 ];
