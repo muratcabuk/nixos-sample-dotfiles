@@ -47,10 +47,13 @@ system.userActivationScripts.zshrc = "touch .zshrc";
   # klavye ayarı yapılıyor
   services.xserver = {
     enable = true;
+
+    # sddm Oturum Yöneticisini aktif ediyoruz
     displayManager.sddm = {
                               enable = true;
                               autoNumlock = true;
-                          };       
+    
+    # kde plasma 5 aktif ediliyor                          };       
     desktopManager.plasma5.enable = true;
 
     layout = "tr";
@@ -70,11 +73,14 @@ system.userActivationScripts.zshrc = "touch .zshrc";
     description = "murat cabuk";
     extraGroups = [ "networkmanager" "wheel" "docker"];
     packages = with pkgs; [];
+
     # kullanıcı default shell i zsh olarka ayarlanıyor
     shell = pkgs.zsh;
   };
 
   # https://nixos.wiki/wiki/Command_Shell
+  # Sistemdeki bütün kullanıcılar için bash varsayılan shell olarak ayaralnıyor
+  # tabiiki kendi kullanıcııda da olduğu gibi farklı shell'lere geçiş yapabilir
   users.defaultUserShell = pkgs.bash;
 
   # Allow unfree packages
@@ -88,11 +94,15 @@ system.userActivationScripts.zshrc = "touch .zshrc";
     wget
     curl
     git
-    kate
     home-manager
-    font-awesome
+    
+    # kde plasma 5 paketleri
+    kate
+    krunner
+    kwin
+    
+    
   ];
-
 
   ## https://wiki.archlinux.org/title/XDG_Base_Directory
   # environment.sessionVariables = {
@@ -105,9 +115,8 @@ system.userActivationScripts.zshrc = "touch .zshrc";
   # };
 
 
-
-
   # https://nixos.wiki/wiki/Fonts
+  # ihtiyacımız olabilcek fontlar yükleniyor.
   fonts.packages = with pkgs; [
                                   meslo-lgs-nf
                                   noto-fonts
@@ -118,7 +127,8 @@ system.userActivationScripts.zshrc = "touch .zshrc";
                                   powerline-symbols
                                   (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })
                               ];
-
+    # zsh'ı sadece home-manager'da aktif etmek yetmiyor
+    # dolayısıyla burada da aktif etmek gerekiyor
     programs = {
       zsh.enable = true;
       };

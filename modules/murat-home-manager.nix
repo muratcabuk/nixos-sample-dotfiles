@@ -34,13 +34,9 @@
                           extensions = ["aapbdbdomjkkjkaonfhkkikfgjllcleb"];
                         };
 
+    # Yukarıda kurulan paketlerin ayarlanması
+    # zsh ayarlarının yapılması
     programs.zsh = {
-
-                      initExtraBeforeCompInit = ''
-                              # p10k instant prompt
-                              P10K_INSTANT_PROMPT="$XDG_CACHE_HOME/p10k-instant-prompt-''${(%):-%n}.zsh"
-                              [[ ! -r "$P10K_INSTANT_PROMPT" ]] || source "$P10K_INSTANT_PROMPT"
-                      '';
 
                       history.size = 10000;
                       historySubstringSearch.enable = true;
@@ -49,18 +45,22 @@
                       enableAutosuggestions = true;
                       dotDir = ".config/zsh";
                       plugins = [
+                                   # zaten kurulu olan powerlevel10k paketinin ayarlamassını yapıyoruz
                                   {
                                     name = "powerlevel10k";
                                     src = pkgs.zsh-powerlevel10k;
                                     file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
                                   }
-
+                                  
+                                  # Elimizdeki konfigurasyon dosyasını sisteme kopyalıyoruz.
+                                  # üst dinizdek config klasöründeki .pk10k.zsh dosyasını kopyalıyoruz
                                   {
                                     name = "powerlevel10k-config";
                                     src = ../config;
                                     file = ".p10k.zsh";
                                   }
-
+                                  
+                                  # manual olarka paket kuruyoruz
                                   {
                                     name = "zsh-syntax-highlighting";
                                     src = pkgs.fetchFromGitHub {
@@ -79,17 +79,13 @@
                                     
                                 
                                   };
+                                     # zsh içine alias tanımlıyoruz
                       shellAliases = {
                                         ll = "ls -l";
                                         nixupdate = "sudo nixos-rebuild switch --flake .#muratpc --impure";
                                       };
                       
                     };
-
-    programs.vscode = {
-                        enable = true;
-                      };
-
 
   # Servislerin Konfigürasyonu
   services.kdeconnect = {
