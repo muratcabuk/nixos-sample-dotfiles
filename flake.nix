@@ -50,7 +50,7 @@
     # bu sistemin adı muratpc olarak değiştirildi
     nixosConfigurations.muratpc = nixpkgs.lib.nixosSystem {
       
-         specialArgs.inputs = inherit inputs;
+         specialArgs.nixpkgs-unstable = nixpkgs-unstable;
 
       # systm bilgisi yukarıda tanımlana system değişkeniniden alındı
       system = system;

@@ -64,7 +64,7 @@ programs.vscode = {
                     extensions = (with pkgs.vscode-extensions;[
                                   pkgs.vscode-extensions.bbenoist.nix
                                   bierner.markdown-emoji
-                                  ]) ++ (with specialArgs.inputs.nixpkgs-unstable.vscode-extensions; [
+                                  ]) ++ (with specialArgs.nixpkgs-unstable.vscode-extensions; [
                                                 # Unstable nixpkgs den paket yükleniyor
                                                 seatonjiang.gitmoji-vscode
                                                 ]);
