@@ -13,7 +13,7 @@
   
   };
 
-  outputs = { self, nixpkgs,home-manager, ... }@inputs: 
+  outputs = { self, nixpkgs,home-manager,nixpkgs-unstable, ... }@inputs: 
   let
 
     # üzerinde çalıştığımız sistemin Nix'deki kod adı.
