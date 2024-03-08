@@ -37,12 +37,10 @@
     LC_TIME = "tr_TR.UTF-8";
   };
 
-# Prevent the new user dialog in zsh
-system.userActivationScripts.zshrc = "touch .zshrc";
-
   # Grafik servisini enable ediyoruz
   # klavye ayarı yapılıyor
   services.xserver = {
+
     enable = true;
 
     # sddm Oturum Yöneticisini aktif ediyoruz
@@ -60,7 +58,6 @@ system.userActivationScripts.zshrc = "touch .zshrc";
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
-
 
   # Configure console keymap
   console.keyMap = "trq";
@@ -98,8 +95,6 @@ system.userActivationScripts.zshrc = "touch .zshrc";
     kate
     krunner
     kwin
-    
-    
   ];
 
   ## https://wiki.archlinux.org/title/XDG_Base_Directory
@@ -126,7 +121,7 @@ system.userActivationScripts.zshrc = "touch .zshrc";
                                   (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })
                               ];
     # zsh'ı sadece home-manager'da aktif etmek yetmiyor
-    # dolayısıyla burada da aktif etmek gerekiyor
+    # burada da aktif etmek gerekiyor
     programs = {
       zsh.enable = true;
       };
