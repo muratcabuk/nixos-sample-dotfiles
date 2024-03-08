@@ -31,9 +31,9 @@
               inherit system;
               overlays = overlays;
             };
-    #pkgs-unstable = import nixpkgs-unstable {
-    #          inherit system;
-    #        };
+    pkgs-unstable = import nixpkgs-unstable {
+              inherit system;
+            };
 
     # build alınan veya override edilen paketler bu flake ile yayınlanıyor.
     packages = {
@@ -53,11 +53,10 @@
     # bu sistemin adı muratpc olarak değiştirildi
     nixosConfigurations.muratpc = nixpkgs.lib.nixosSystem {
       
-      # Bu nixos-configuration ve diğer custom moduller için
-      # specialArgs = {inherit nixpkgs-unstable; };
+      # Bu nixos-configuration ve diğer custom moduller extra arguman geçirmek için
+      specialArgs = {inherit nixpkgs-unstable; };
 
-      # Bu da home-manager için
-      extraSpecialArgs = {inherit nixpkgs-unstable; };
+
 
 
 
@@ -66,20 +65,19 @@
 
       # dosya adresi değiştirildi
       modules = [
-        ./modules/nixos-configuration.nix
-         home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.muratcabuk = import ./modules/murat-home-manager.nix;
-            
-            # Optionally, use home-manager.extraSpecialArgs to pass
-            # arguments to home.nix
+          ./modules/nixos-configuration.nix
+          home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.users.muratcabuk = import ./modules/murat-home-manager.nix;
 
-          }
+              # Bu da home-manager için
+              extraSpecialArgs = {inherit pkgs-unstable; };
+
+            }
       ];
     };
-   
     packages = packages;
   };
 }
