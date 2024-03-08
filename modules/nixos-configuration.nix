@@ -93,7 +93,6 @@
     
     # kde plasma 5 paketleri
     kate
-    krunner
     kwin
   ];
 
