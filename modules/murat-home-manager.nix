@@ -44,7 +44,9 @@ programs.vscode = {
                     mutableExtensionsDir = true;
 
                     # Kişisel ayaralrmızı json formatta girebiliriz.
-                    userSettings = "";
+                     userSettings = {
+                                      "editor.fontSize" = 16;
+                                    };
 
                     # vs code update'leri kontrol edilsin mi?
                     enableUpdateCheck = true;
@@ -57,8 +59,23 @@ programs.vscode = {
                     # extension listesi yazılabilir
                     # ancak tabi extension ları burradan yüklemek istersek bu paketlerin yazılmış olması lazım.
                     # şuan Nixos paket yöneticisinde 290 paketin yazılı olduğu görünüyor.
-                    extensions = [pkgs.vscode-extensions.bbenoist.nix];
-
+                    # ayrıca istenirse farklı version lardan da kurulum yapılabilir.
+                    # Altta ili liste ++ opratörü ile topşanıyor.
+                    extensions = (with pkgs.vscode-extensions;[
+                                  pkgs.vscode-extensions.bbenoist.nix
+                                  bierner.markdown-emoji
+                                  ]) ++ (with pkgs.unstable.vscode-extensions; [
+                                                # Unstable nixpkgs den paket yükleniyor
+                                                seatonjiang.gitmoji-vscode
+                                                ]);
+                    # kısayol tanımları yapılabilir
+                    keybindings = [
+                                    {
+                                      key = "ctrl+y";
+                                      command = "editor.action.commentLine";
+                                      when = "editorTextFocus && !editorReadonly";
+                                    }
+                                  ];
                   };
 
 
