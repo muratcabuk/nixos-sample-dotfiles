@@ -49,6 +49,7 @@ system.userActivationScripts.zshrc = "touch .zshrc";
     displayManager.sddm = {
                               enable = true;
                               autoNumlock = true;
+    };
     
     # kde plasma 5 aktif ediliyor                          };       
     desktopManager.plasma5.enable = true;
@@ -134,7 +135,5 @@ system.userActivationScripts.zshrc = "touch .zshrc";
     networking.firewall.enable = false;
 
     system.stateVersion = "23.11";
-
-};
 
 }
