@@ -43,7 +43,7 @@ programs.vscode = {
                     # ÖZellikle NixOs a alışma şamasında faydalı olacaktır.
                     mutableExtensionsDir = true;
 
-                    # Kişisel ayaralrmızı json formatta girebiliriz.
+                    # Kişisel ayarlarmızı json format da girebiliriz.
                     userSettings = {
                                       "editor.fontSize" = 16;
                                     };
