@@ -44,7 +44,7 @@ programs.vscode = {
                     mutableExtensionsDir = true;
 
                     # Kişisel ayaralrmızı json formatta girebiliriz.
-                     userSettings = {
+                    userSettings = {
                                       "editor.fontSize" = 16;
                                     };
 
@@ -64,13 +64,13 @@ programs.vscode = {
                     extensions = (with pkgs.vscode-extensions;[
                                   pkgs.vscode-extensions.bbenoist.nix
                                   bierner.markdown-emoji
-                                  ]) ++ (with specialArgs.nixpkgs-unstable.vscode-extensions; [
+                                  ]) ++ (with specialArgs.pkgs-unstable.vscode-extensions; [
                                                 # Unstable nixpkgs den paket yükleniyor
                                                 seatonjiang.gitmoji-vscode
                                                 ]);
                     # kısayol tanımları yapılabilir
                     keybindings = [
-                                    {
+                                    { 
                                       key = "ctrl+y";
                                       command = "editor.action.commentLine";
                                       when = "editorTextFocus && !editorReadonly";
