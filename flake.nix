@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.11";
+    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     home-manager = {
       url = "github:nix-community/home-manager/release-23.11";  # this selects the release-branch and needs to match Nixpkgs
@@ -49,6 +50,8 @@
     # bu sistemin adı muratpc olarak değiştirildi
     nixosConfigurations.muratpc = nixpkgs.lib.nixosSystem {
       
+         specialArgs.inputs = inputs;
+
       # systm bilgisi yukarıda tanımlana system değişkeniniden alındı
       system = system;
 
