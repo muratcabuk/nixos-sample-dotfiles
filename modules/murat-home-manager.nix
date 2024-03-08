@@ -34,6 +34,36 @@
                           extensions = ["aapbdbdomjkkjkaonfhkkikfgjllcleb"];
                         };
 
+
+
+programs.vscode = {
+                    enable = true;
+
+                    # bu ayar sayesinde VS Code'u manulal olarak da yöntecileceğiz.
+                    # ÖZellikle NixOs a alışma şamasında faydalı olacaktır.
+                    mutableExtensionsDir = true;
+
+                    # Kişisel ayaralrmızı json formatta girebiliriz.
+                    userSettings = "";
+
+                    # vs code update'leri kontrol edilsin mi?
+                    enableUpdateCheck = true;
+                    # extensiton ların update'leri kontrol edilsin mi?
+                    enableExtensionUpdateCheck = true;
+
+                    # community open source edition olan  pkgs.vscodium  paketi de kullanılabilir 
+                    package = pkgs.vscode;
+
+                    # extension listesi yazılabilir
+                    # ancak tabi extension ları burradan yüklemek istersek bu paketlerin yazılmış olması lazım.
+                    # şuan Nixos paket yöneticisinde 290 paketin yazılı olduğu görünüyor.
+                    extensions = [pkgs.vscode-extensions.bbenoist.nix];
+
+                  };
+
+
+
+
     # Yukarıda kurulan paketlerin ayarlanması
     # zsh ayarlarının yapılması
     programs.zsh = {
