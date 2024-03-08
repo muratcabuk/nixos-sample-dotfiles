@@ -1,4 +1,4 @@
-{ config, pkgs, extraSpecialArgs, ... }:
+{ config, pkgs, pkgs-unstable, ... }:
 
 {
   # buradaki kullanıcı nixos-configuration.nix dosyasında tanımlı olan kullanıcı ile aynı olmalı
@@ -64,7 +64,7 @@ programs.vscode = {
                     extensions = (with pkgs.vscode-extensions;[
                                   pkgs.vscode-extensions.bbenoist.nix
                                   bierner.markdown-emoji
-                                  ]) ++ (with extraSpecialArgs.pkgs-unstable.vscode-extensions; [
+                                  ]) ++ (with pkgs-unstable.vscode-extensions; [
                                                 # Unstable nixpkgs den paket yükleniyor
                                                 seatonjiang.gitmoji-vscode
                                                 ]);

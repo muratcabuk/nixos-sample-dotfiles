@@ -54,7 +54,7 @@
     nixosConfigurations.muratpc = nixpkgs.lib.nixosSystem {
       
       # Bu nixos-configuration ve diğer custom moduller extra arguman geçirmek için
-      specialArgs = {inherit nixpkgs-unstable; };
+      specialArgs = {inherit pkgs-unstable; };
 
 
 
@@ -73,7 +73,7 @@
               home-manager.users.muratcabuk = import ./modules/murat-home-manager.nix;
 
               # Bu da home-manager için
-              extraSpecialArgs = {inherit pkgs-unstable; };
+              home-manager.extraSpecialArgs = {inherit pkgs-unstable; };
 
             }
       ];
