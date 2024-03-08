@@ -37,10 +37,7 @@
     LC_TIME = "tr_TR.UTF-8";
   };
 
-
-
-
-  # Prevent the new user dialog in zsh
+# Prevent the new user dialog in zsh
 system.userActivationScripts.zshrc = "touch .zshrc";
 
   # Grafik servisini enable ediyoruz
@@ -67,7 +64,7 @@ system.userActivationScripts.zshrc = "touch .zshrc";
   # Configure console keymap
   console.keyMap = "trq";
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
+  # Define a user account. Don't forget to set a password with `passwd`.
   users.users.muratcabuk = {
     isNormalUser = true;
     description = "murat cabuk";
@@ -136,6 +133,8 @@ system.userActivationScripts.zshrc = "touch .zshrc";
 
     networking.firewall.enable = false;
 
-    system.stateVersion = "23.11"; # Did you read the comment?
+    system.stateVersion = "23.11";
+
+};
 
 }

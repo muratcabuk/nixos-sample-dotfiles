@@ -45,7 +45,7 @@
                       enableAutosuggestions = true;
                       dotDir = ".config/zsh";
                       plugins = [
-                                   # zaten kurulu olan powerlevel10k paketinin ayarlamassını yapıyoruz
+                                  # zaten kurulu olan powerlevel10k paketinin ayarlamassını yapıyoruz
                                   {
                                     name = "powerlevel10k";
                                     src = pkgs.zsh-powerlevel10k;
@@ -79,7 +79,7 @@
                                     
                                 
                                   };
-                                     # zsh içine alias tanımlıyoruz
+                      # zsh içine alias tanımlıyoruz
                       shellAliases = {
                                         ll = "ls -l";
                                         nixupdate = "sudo nixos-rebuild switch --flake .#muratpc --impure";
