@@ -31,9 +31,9 @@
               inherit system;
               overlays = overlays;
             };
-    pkgs-unstable = import nixpkgs-unstable {
-              inherit system;
-            };
+    #pkgs-unstable = import nixpkgs-unstable {
+    #          inherit system;
+    #        };
 
     # build alınan veya override edilen paketler bu flake ile yayınlanıyor.
     packages = {
@@ -53,7 +53,7 @@
     # bu sistemin adı muratpc olarak değiştirildi
     nixosConfigurations.muratpc = nixpkgs.lib.nixosSystem {
       
-         specialArgs.pkgs-unstable = pkgs-unstable;
+         specialArgs = {inherit pkgs-unstable};
 
       # systm bilgisi yukarıda tanımlana system değişkeniniden alındı
       system = system;
