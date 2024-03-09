@@ -56,8 +56,8 @@
     xkbVariant = "";
 
 
-  # kvm-qemu (libvirt) için gerekli
-  qemuGuest.enable = true;
+  # Nixos u libvirt için guest olarak çalıştıldığında kullanılır
+  # qemuGuest.enable = true;
 
   };
 
@@ -71,7 +71,7 @@
   users.users.muratcabuk = {
     isNormalUser = true;
     description = "murat cabuk";
-    extraGroups = [ "networkmanager" "wheel" "docker"];
+    extraGroups = [ "networkmanager" "wheel" "docker" "libvirtd"];
     packages = with pkgs; [];
 
     # kullanıcı default shell i zsh olarka ayarlanıyor
