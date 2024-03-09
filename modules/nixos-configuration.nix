@@ -134,7 +134,7 @@
       zsh.enable = true;
       
       # kvm-qemu (libvirt) için nixos 23.11 den oncesi için gerekli
-      # dconf.enable = true;
+      dconf.enable = true;
       };
 
 
