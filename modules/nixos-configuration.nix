@@ -154,7 +154,7 @@
                         #daemon.settings = {
                         #        data-root = "/some-place/to-store-the-docker-data";
                         #};
-                        };;
+                        };
 
     networking.firewall.enable = false;
 
