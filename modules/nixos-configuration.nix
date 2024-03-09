@@ -54,6 +54,11 @@
 
     layout = "tr";
     xkbVariant = "";
+
+
+  # kvm-qemu (libvirt) için gerekli
+  qemuGuest.enable = true;
+
   };
 
   # Enable the OpenSSH daemon.
@@ -94,6 +99,10 @@
     # kde plasma 5 paketleri
     kate
     kwin
+
+    # virtualisation
+    virt-manager
+
   ];
 
   ## https://wiki.archlinux.org/title/XDG_Base_Directory
@@ -123,7 +132,17 @@
     # burada da aktif etmek gerekiyor
     programs = {
       zsh.enable = true;
+      
+      # kvm-qemu (libvirt) için nixos 23.11 den oncesi için gerekli
+      # dconf.enable = true;
       };
+
+
+
+    # virtualisation / kvm-qemu
+    virtualisation.libvirtd.enable = true;
+
+
 
 
     networking.firewall.enable = false;
