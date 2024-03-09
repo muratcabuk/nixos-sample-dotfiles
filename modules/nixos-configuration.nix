@@ -146,7 +146,7 @@
 
     # virtualizatiob docker 
     virtualisation.docker = {
-                        enable = true
+                        enable = true;
                         # eğer btrf kullanacaksanız
                         # storageDriver = "btrfs";
 
