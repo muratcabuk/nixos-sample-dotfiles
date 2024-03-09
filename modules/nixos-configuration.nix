@@ -72,6 +72,8 @@
     isNormalUser = true;
     description = "murat cabuk";
     extraGroups = [ "networkmanager" "wheel" "docker" "libvirtd"];
+
+    # kişise özel paketler. Biz bu kısmı home manager ile yöneteceğiz
     packages = with pkgs; [];
 
     # kullanıcı default shell i zsh olarka ayarlanıyor
@@ -134,7 +136,7 @@
       zsh.enable = true;
       
       # kvm-qemu (libvirt) için nixos 23.11 den oncesi için gerekli
-      dconf.enable = true;
+      # dconf.enable = true;
       };
 
 
@@ -142,8 +144,17 @@
     # virtualisation / kvm-qemu
     virtualisation.libvirtd.enable = true;
 
+    # virtualizatiob docker 
+    virtualisation.docker = {
+                        enable = true
+                        # eğer btrf kullanacaksanız
+                        # storageDriver = "btrfs";
 
-
+                        # Docker data dizinini değiştirmek isterseniz
+                        #daemon.settings = {
+                        #        data-root = "/some-place/to-store-the-docker-data";
+                        #};
+                        };;
 
     networking.firewall.enable = false;
 
