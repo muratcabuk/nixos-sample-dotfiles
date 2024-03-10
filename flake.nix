@@ -71,11 +71,10 @@
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.users.muratcabuk = import ./modules/murat-home-manager.nix;
-
               # Bu da home-manager için
               home-manager.extraSpecialArgs = {inherit pkgs-unstable; };
-
             }
+          
       ];
     };
     packages = packages;

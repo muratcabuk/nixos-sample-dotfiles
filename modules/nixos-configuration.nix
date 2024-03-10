@@ -4,6 +4,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ../hosts/lenovo-l15/hardware-configuration.nix
+      ./nginx.nix;
     ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -63,6 +64,7 @@
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
+
 
   # Configure console keymap
   console.keyMap = "trq";
