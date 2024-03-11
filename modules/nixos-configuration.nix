@@ -4,7 +4,8 @@
   imports =
     [ # Include the results of the hardware scan.
       ../hosts/lenovo-l15/hardware-configuration.nix
-      ./nginx.nix;
+      ./nginx.nix
+      ./postgres.nix
     ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -14,6 +15,7 @@
   boot.loader.grub.device = "/dev/sda";
   boot.loader.grub.useOSProber = true;
 
+  # https://nixos.wiki/wiki/Networking
   networking.hostName = "muratpc"; 
 
   # Enable networking

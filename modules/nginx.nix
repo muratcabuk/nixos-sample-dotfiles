@@ -1,52 +1,53 @@
-{ config, pkgs}:
+{ config, pkgs,lib, ...}:
+
 let
 
-  indexFile = ../html/index.html;
+  site1Root = pkgs.writeTextDir "html/site1/index.html" ''
+      <!DOCTYPE html>
+      <html lang="en">
+      <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>Document</title>
+      </head>
+      <body>
+          Hello from Site 1
+      </body>
+      </html>'';
 
-  site1IndexFile = /var/www/site1/index.html;
-  site2IndexFile = /var/www/site2/index.html;
-
-  replacementText = "site-message";
-
-  originalText = lib.readFile indexFile; # Dosyayı oku
-
-  site1Text = lib.substitute originalText {
-    search = replacementText;
-    replace = "Hello from Site 1";
-  }; # Metni değiştir
-
-  site2Text = lib.substitute originalText {
-    search = replacementText;
-    replace = "Hello from Site 2";
-  }; # Metni değiştir
-
+  site2Root = pkgs.writeTextDir "html/site2/index.html" ''
+      <!DOCTYPE html>
+      <html lang="en">
+      <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>Document</title>
+      </head>
+      <body>
+          Hello from Site 2
+      </body>
+      </html>'';
 
 in
+
 {
+  # https://nixos.wiki/wiki/Networking
+    networking.extraHosts = ''
+                              127.0.0.1 site1
+                              127.0.0.1 site2
+                            '';
 
-lib.writeTextFile site1IndexFile site1Text;
+  services.nginx = {
+                    enable = true;
+                    
+                    recommendedGzipSettings = true;
 
-lib.writeTextFile site2IndexFile site1Text;
+                    virtualHosts."site1" = {
+                                              locations."/" = {root = site1Root + "/html/site1";};
+                                           };
 
-
-services.nginx = {
-    enable = true;
-    recommendedGzipSettings = true;
-
-    virtualHosts."example.com" = {
-      locations."/" = {
-        root = "/var/www/site1"; # Birinci site dosyalarının yolu
-      };
-    };
-
-    virtualHosts."example.net" = {
-      locations."/" = {
-        root = "/var/www/site2"; # İkinci site dosyalarının yolu
-      };
-    };
-
-    extraConfig = ''
-      # Diğer özel ayarlamalar buraya eklenir
-    '';
-  };
+                    virtualHosts."site2" = {
+                                              locations."/" = {root = site2Root + "/html/site2";};
+                                            };
+                   };
 }
