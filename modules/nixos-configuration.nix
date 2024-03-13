@@ -4,8 +4,6 @@
   imports =
     [ # Include the results of the hardware scan.
       ../hosts/lenovo-l15/hardware-configuration.nix
-      ./nginx.nix
-      ./postgres.nix
     ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
