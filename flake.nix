@@ -74,7 +74,9 @@
               # Bu da home-manager için
               home-manager.extraSpecialArgs = {inherit pkgs-unstable; };
             }
-          
+
+          ./modules/nginx.nix
+          #./modules/postgres.nix
       ];
     };
     packages = packages;
