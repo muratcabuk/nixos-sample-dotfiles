@@ -5,20 +5,20 @@
   options = {
       postgres.database_name = lib.mkOption {
         type = lib.types.str;
-        description = "database name"
+        description = "database name";
         default = null;
       };
 
 
       postgres.username = lib.mkOption {
         type = lib.types.str;
-        description = "db username"
+        description = "db username";
         default = null;
       };
 
       postgres.password = lib.mkOption {
         type = lib.types.str;
-        description = "db password"
+        description = "db password";
         default = null;
       };
 
@@ -31,9 +31,9 @@ config = lib.mkMerge [ {
                         }
 
                         # eğer nginx enable ise postgres de çalışsın
-                        (lib.mkIf config.services.nginx {
+                        (lib.mkIf config.services.nginx.enable {
 
-                                config.services.postgresql = {
+                                services.postgresql = {
                                     enable = true;
                                     ensureDatabases = [ config.postgres.database_name ];
                                     enableTCPIP = true;
@@ -45,8 +45,9 @@ config = lib.mkMerge [ {
                                             CREATE DATABASE ${config.postgres.database_name};
                                             GRANT ALL PRIVILEGES ON DATABASE ${config.postgres.database_name} TO ${config.postgres.username};
                                             '';
-                                      };};
+                                      };}
                         )
+                        
                     ];
 
 }
