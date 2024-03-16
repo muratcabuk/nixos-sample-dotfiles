@@ -57,9 +57,6 @@
       specialArgs = {inherit pkgs-unstable; };
 
 
-
-
-
       # systm bilgisi yukarıda tanımlana system değişkeniniden alındı
       system = system;
 
@@ -76,7 +73,7 @@
             }
 
           ./modules/nginx.nix
-          #./modules/postgres.nix
+          ./modules/postgres.nix
       ];
     };
     packages = packages;
