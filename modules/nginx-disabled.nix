@@ -1,8 +1,13 @@
-{ config, pkgs,...}:
-        specialisation = {
-                nginx-disabled.configuration = {
-                              inheritParentConfig = true; 
-                              system.nixos.tags = [ "nginx-disabled" ];
-                              services.nginx.enable = false;
-                                  };
-          }         
+{ config, pkgs,lib, ...}: 
+ {
+    specialisation = {
+           nginx-disabled = {
+                inheritParentConfig = true; 
+                configuration = {
+                         
+                         system.nixos.tags = [ "nginx-disabled" ];
+                         services.nginx.enable = lib.mkForce false;
+                                 };
+                            };
+                      };
+ }

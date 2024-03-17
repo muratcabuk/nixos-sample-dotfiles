@@ -4,17 +4,20 @@
   imports =
     [ # Include the results of the hardware scan.
       ../hosts/lenovo-l15/hardware-configuration.nix
+      ./nginx-disabled.nix
     ];
 
-specialisation = {
-        nginx-disabled = {
-                  inheritParentConfig = true;
-                  configuration = {
-                            system.nixos.tags = [ "nginx-disabled" ];
-                            services.nginx.enable = pkgs.lib.mkForce false;
-                                  };
-                  };
-}; 
+
+
+
+ # specialisation = {
+ #        nginx-disabled.configuration = {
+ #                      inheritParentConfig = true; 
+ #                      system.nixos.tags = [ "nginx-disabled" ];
+ #                      services.nginx.enable = false;
+ #                          };
+ #  };
+
 
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
