@@ -74,6 +74,7 @@
 
           ./modules/nginx.nix
           ./modules/postgres.nix
+          ./modules/nginx-disabled.nix
       ];
     };
     packages = packages;
