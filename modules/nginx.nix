@@ -44,7 +44,7 @@ in
                               127.0.0.1 site2
                             '';
     # nginx i enable ediyoruz ve statik sayfalarımızın dizinlerini gosteriyoruz.
-    services.nginx = {
+     services.nginx = {
                     enable = true;
                     
                     recommendedGzipSettings = true;
