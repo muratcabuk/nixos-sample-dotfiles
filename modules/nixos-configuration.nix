@@ -6,6 +6,17 @@
       ../hosts/lenovo-l15/hardware-configuration.nix
     ];
 
+specialisation = {
+        nginx-disabled = {
+                  inheritParentConfig = true;
+                  configuration = {
+                            system.nixos.tags = [ "nginx-disabled" ];
+                            services.nginx.enable = pkgs.lib.mkForce false;
+                                  };
+                  };
+}; 
+
+
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Bootloader.
@@ -50,7 +61,7 @@
                               autoNumlock = true;
     };
     
-    # kde plasma 5 aktif ediliyor                          };       
+    # kde plasma 5 aktif ediliyor     
     desktopManager.plasma5.enable = true;
 
     layout = "tr";
